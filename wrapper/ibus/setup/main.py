@@ -34,6 +34,15 @@
 # to such option by the copyright holder. 
 #
 
+try:
+    from gi import pygtkcompat
+except ImportError:
+    pygtkcompat = None
+
+if pygtkcompat is not None:
+    pygtkcompat.enable()
+    pygtkcompat.enable_gtk(version='3.0')
+
 import sys
 import os
 from os import path
